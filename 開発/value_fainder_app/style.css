@@ -1,0 +1,88 @@
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background-color: #f5f5f5; /* マテリアルデザインの背景色 */
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.hand-area {
+    display: flex;
+    flex-wrap: wrap; /* カードが折り返すように */
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.card {
+    width: 160px;
+    height: 220px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    padding: 20px 15px; /* 上下のパディングを調整 */
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow .25s, transform .25s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid transparent; /* 選択状態の枠線用 */
+    position: relative; /* 子要素の絶対位置の基準 */
+}
+
+.card .card-number {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #9e9e9e;
+}
+
+.card .card-detail-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #9e9e9e;
+    cursor: pointer;
+    transition: color .2s;
+}
+
+.card .card-detail-icon:hover {
+    color: #29b6f6;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+}
+
+.card.selected {
+    border-color: #29b6f6; /* 選択されたカードの枠線 */
+    box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+}
+
+.card .keyword {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#game-actions p {
+    margin-top: 5px;
+    color: #616161;
+}
+
+/* モーダルのスタイルはMaterializeが提供するため、カスタムCSSは不要 */
+#card-detail-content .keyword {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#card-detail-content .description {
+    font-size: 16px;
+}

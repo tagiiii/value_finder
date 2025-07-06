@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>バリューファインダー</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- トップ画面 -->
+        <div id="top-screen" class="section center-align">
+            <h1>バリューファインダー</h1>
+            <p class="flow-text">あなたの大切な価値観を見つける旅へ。</p>
+            <a id="start-button" class="waves-effect waves-light btn-large">セッションを開始する</a>
+            <a id="how-to-play-button" class="waves-effect waves-light btn-large modal-trigger" href="#how-to-play-modal">遊び方を見る</a>
+        </div>
+
+        <!-- ゲーム画面 -->
+        <div id="game-screen" class="section center-align" style="display: none;">
+            <div id="game-actions" class="section">
+                 <a id="draw-card-button" class="btn-floating btn-large waves-effect waves-light red disabled"><i class="material-icons">autorenew</i></a>
+                 <p>カードを選んでから、上のボタンで交換</p>
+                 <p id="exchange-count">残り交換回数: <span>5</span>回</p>
+            </div>
+            <div id="hand-area" class="hand-area">
+                <!-- 手札のカードがここに表示される -->
+            </div>
+            <a id="confirm-button" class="waves-effect waves-light btn-large">この5枚で決定する</a>
+        </div>
+
+        <!-- 並び替え画面 -->
+        <div id="result-screen" class="section center-align" style="display: none;">
+            <h2>価値観を並び替えよう</h2>
+            <p>ドラッグ＆ドロップで、あなたにとって大切な順番に並び替えてください。</p>
+            <div id="final-cards-area" class="hand-area">
+                <!-- 最終的に選ばれた5枚のカードがここに表示される -->
+            </div>
+            <a id="finish-button" class="waves-effect waves-light btn-large">セッションを終了する</a>
+        </div>
+    </div>
+
+    <!-- 遊び方モーダル -->
+    <div id="how-to-play-modal" class="modal">
+        <div class="modal-content">
+            <h4>遊び方</h4>
+            <ul>
+                <li>5枚のカードからスタートします。</li>
+                <li>手札のカードをクリックして選択します。</li>
+                <li>「交換」ボタンを押すと、選択したカードが山札の新しいカードと入れ替わります。</li>
+                <li>手札を吟味し、最終的に残したい5枚のカードを決めます。</li>
+                <li>最後に、5枚のカードをあなたにとって大切な順番に並び替えます。</li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">閉じる</a>
+        </div>
+    </div>
+
+    <!-- カード詳細モーダル -->
+    <div id="card-detail-modal" class="modal">
+        <div id="card-detail-content" class="modal-content">
+            <!-- ここにカード詳細が挿入される -->
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">閉じる</a>
+        </div>
+    </div>
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
